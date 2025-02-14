@@ -6,13 +6,12 @@
   <title>リリーとミニチュアカフェ</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: 'Georgia', serif;
       text-align: center;
       background-color: #fff5e1;
       color: #5c4033;
       padding: 20px;
       overflow: hidden;
-      position: relative;
     }
 
     @keyframes sparkleFlow {
@@ -26,47 +25,37 @@
       height: 4px;
       background-color: rgba(255, 255, 255, 0.9);
       border-radius: 50%;
-      opacity: 0.8;
       animation: sparkleFlow 8s linear infinite;
-      filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.9));
+      filter: drop-shadow(0 0 6px white);
     }
 
-    h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
-      color: #d19c67;
-      font-family: 'Georgia', serif;
+    @keyframes flipBook {
+      0% { transform: rotateY(0); }
+      50% { transform: rotateY(180deg); }
+      100% { transform: rotateY(360deg); }
     }
 
-    .button {
+    .book-button {
       display: inline-block;
-      padding: 14px 28px;
+      padding: 20px;
       font-size: 1.3em;
-      color: white;
-      background-color: #e6a27a;
-      border-radius: 30px;
-      text-decoration: none;
       font-weight: bold;
-      transition: background-color 0.3s, transform 0.2s;
+      color: #fff;
+      background-color: #d19c67;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: transform 0.5s;
+      perspective: 1000px;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
     }
 
-    .button:hover {
-      background-color: #cf8c5a;
-      transform: translateY(-3px);
-    }
-
-    .story-preview {
-      margin-top: 30px;
-      padding: 25px;
-      background-color: #fffaf2;
-      border-radius: 20px;
-      border: 3px dashed #d19c67;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    .book-button:hover {
+      animation: flipBook 1s;
+      background-color: #b88655;
     }
   </style>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const body = document.body;
       for (let i = 0; i < 150; i++) {
         const sparkle = document.createElement('div');
         sparkle.classList.add('sparkle-particle');
@@ -74,19 +63,19 @@
         sparkle.style.top = `${Math.random() * 100}vh`;
         sparkle.style.animationDuration = `${Math.random() * 5 + 3}s`;
         sparkle.style.animationDelay = `${Math.random() * 3}s`;
-        body.appendChild(sparkle);
+        document.body.appendChild(sparkle);
       }
     });
   </script>
 </head>
 <body>
-  <h1>「リリーとミニチュアカフェ」へようこそ</h1>
-  <p class="intro">リリーと一緒に、ミニチュアの世界を旅しませんか？✨</p>
+  <h1>📖 ようこそ「リリーとミニチュアカフェ」へ 💫</h1>
+  <p>ミニチュアフードと魔法の物語をご一緒に✨</p>
   <div class="story-preview">
-    <h2>📖 ストーリー プレビュー</h2>
-    <p>【プロローグ】夢のようなミニチュアフードが並ぶ「ミニチュアカフェ」。金髪の少女リリーが心を込めたカップケーキは、笑顔を生む魔法が込められています。</p>
+    <h2>🌟 ストーリー プレビュー 🌟</h2>
+    <p>【プロローグ】リリーが心を込めたカップケーキは、笑顔を生む魔法が込められています💖</p>
   </div>
-  <a href="story.html" class="button">✨ ストーリーを見る ✨</a>
+  <a href="story.html" class="book-button">📘 ストーリーを見る 📘</a>
 </body>
 </html>
 
