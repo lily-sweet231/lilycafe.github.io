@@ -15,28 +15,19 @@
       position: relative;
     }
 
-    @keyframes sparkle {
-      from { transform: translateY(-100%); }
-      to { transform: translateY(100%); }
+    @keyframes sparkleFlow {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(100%); opacity: 1; }
     }
 
-    .sparkles {
+    .sparkle-particle {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    .sparkles::before {
-      content: '✨✨✨✨✨';
-      font-size: 5em;
-      opacity: 0.3;
-      position: absolute;
-      white-space: nowrap;
-      animation: sparkle 10s linear infinite;
+      width: 4px;
+      height: 4px;
+      background-color: rgba(255, 215, 160, 0.8);
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: sparkleFlow 8s linear infinite;
     }
 
     h1 {
@@ -68,27 +59,32 @@
       padding: 25px;
       background-color: #fffaf2;
       border-radius: 20px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
       border: 3px dashed #d19c67;
-    }
-
-    p.intro {
-      font-size: 1.2em;
-      font-style: italic;
-      color: #7c5c48;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const body = document.body;
+      for (let i = 0; i < 100; i++) {
+        const sparkle = document.createElement('div');
+        sparkle.classList.add('sparkle-particle');
+        sparkle.style.left = `${Math.random() * 100}vw`;
+        sparkle.style.top = `${Math.random() * 100}vh`;
+        sparkle.style.animationDuration = `${Math.random() * 5 + 3}s`;
+        sparkle.style.animationDelay = `${Math.random() * 3}s`;
+        body.appendChild(sparkle);
+      }
+    });
+  </script>
 </head>
 <body>
-  <div class="sparkles"></div>
   <h1>🌼 ようこそ「リリーとミニチュアカフェ」へ 🌼</h1>
-  <p class="intro">リリーと一緒に、ミニチュアの世界を旅しませんか？</p>
-  
+  <p class="intro">リリーと一緒に、ミニチュアの世界を旅しませんか？✨</p>
   <div class="story-preview">
     <h2>📖 ストーリー プレビュー</h2>
-    <p>【プロローグ】静かな町の片隅に、夢のようなミニチュアフードが並ぶ「ミニチュアカフェ」。作り手は金髪の少女リリー。心を込めたカップケーキには、笑顔を生む魔法が込められていました💖</p>
+    <p>【プロローグ】夢のようなミニチュアフードが並ぶ「ミニチュアカフェ」。金髪の少女リリーが心を込めたカップケーキは、笑顔を生む魔法が込められています💖</p>
   </div>
-  
   <a href="story.html" class="button">✨ ストーリーを見る ✨</a>
 </body>
 </html>
