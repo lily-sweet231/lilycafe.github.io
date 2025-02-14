@@ -24,10 +24,11 @@
       position: fixed;
       width: 4px;
       height: 4px;
-      background-color: rgba(255, 215, 160, 0.8);
+      background-color: rgba(255, 255, 255, 0.9);
       border-radius: 50%;
-      opacity: 0.6;
+      opacity: 0.8;
       animation: sparkleFlow 8s linear infinite;
+      filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.9));
     }
 
     h1 {
@@ -66,7 +67,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const body = document.body;
-      for (let i = 0; i < 100; i++) {
+      for (let i = 0; i < 150; i++) {
         const sparkle = document.createElement('div');
         sparkle.classList.add('sparkle-particle');
         sparkle.style.left = `${Math.random() * 100}vw`;
@@ -88,3 +89,4 @@
   <a href="story.html" class="button">✨ ストーリーを見る ✨</a>
 </body>
 </html>
+
