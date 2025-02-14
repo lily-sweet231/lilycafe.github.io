@@ -3,56 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="リリーとミニチュアカフェ | 本とアクセサリーの紹介">
   <title>リリーとミニチュアカフェ</title>
   <style>
     body {
-      font-family: 'Georgia', serif;
-      background: linear-gradient(135deg, #e0d7c3, #f2ece4);
-      color: #4a3f3b;
+      font-family: 'Arial', sans-serif;
       text-align: center;
-      padding: 60px;
-      animation: fadeIn 2s ease-in-out;
-      overflow-y: scroll;
-      scroll-behavior: smooth;
+      background-color: #fdf6e3;
+      color: #5c4033;
+      padding: 20px;
     }
-    header, p, .button {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: slideIn 1s forwards;
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
     }
-    header { animation-delay: 0.5s; font-size: 3rem; }
-    p { animation-delay: 0.7s; font-size: 1.4rem; }
     .button {
-      animation-delay: 0.9s;
-      padding: 12px 25px;
-      font-size: 1.3rem;
-      color: #fff;
-      background-color: #857f72;
-      border-radius: 30px;
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 1.2em;
+      color: white;
+      background-color: #d19c67;
+      border-radius: 25px;
       text-decoration: none;
-      transition: 0.4s;
+      transition: background-color 0.3s;
     }
     .button:hover {
-      background-color: #6c6558;
-      transform: translateY(-3px);
+      background-color: #b88655;
     }
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-    @keyframes slideIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
+    .story-preview {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #fff7ec;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
 <body>
-  <audio autoplay loop>
-    <source src="bgm.mp3" type="audio/mpeg">
-  </audio>
-  <header>✨ リリーとミニチュアカフェへようこそ ✨</header>
-  <p>夢のようなミニチュアの世界へ、心温まるストーリーをお届けします。</p>
-  <a href="about.html" class="button">🌙 ストーリーを見る</a>
+  <h1>ようこそ「リリーとミニチュアカフェ」へ</h1>
+  <p>リリーと一緒に、ミニチュアの世界を旅しませんか？</p>
+  
+  <div class="story-preview">
+    <h2>ストーリー プレビュー</h2>
+    <p>【プロローグ】静かな町の片隅に、夢のようなミニチュアフードが並ぶ「ミニチュアカフェ」がありました。作り手は金髪の少女リリー。心を込めたカップケーキは、見る人を笑顔にする魔法を秘めていました。</p>
+  </div>
+  
+  <a href="story.html" class="button">ストーリーを見る</a>
 </body>
 </html>
